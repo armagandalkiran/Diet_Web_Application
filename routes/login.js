@@ -9,7 +9,7 @@ router.post("/", (req,res)  => {
 
     // database connection 
     sql.connect(config, function (err) {
-        (err) ? console.log(err) : console.log("Database connected !");
+        (err) ? console.log(err) : console.log("Database connected ! login");
     
         const request = new sql.Request();
         request.query(`select * from users where email = '${email}'`, (err,result) => {

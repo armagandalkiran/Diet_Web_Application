@@ -7,7 +7,7 @@ const config = require("../dbconfig");
 router.get("/ingredients",(req,res) => {
 
      sql.connect(config, function (err) {
-        (err) ? console.log(err) : console.log("Database connected !");
+        (err) ? console.log(err) : console.log("Database connected ingredients!");
     
         const request = new sql.Request();
         request.query(`select * 
@@ -24,7 +24,7 @@ router.post("/ingredients",(req,res) => {
     const {id,stock} = req.body;
 
     sql.connect(config, function (err) {
-    (err) ? console.log(err) : console.log("Database connected !");
+    (err) ? console.log(err) : console.log("Database connected ingredients!");
 
     const request = new sql.Request();
     request.query(`update stores
@@ -36,7 +36,5 @@ router.post("/ingredients",(req,res) => {
 });
 
 });
-
-
 
 module.exports = router;

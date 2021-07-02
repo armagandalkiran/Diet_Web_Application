@@ -6,13 +6,10 @@
 .ingredients_table{
     margin-top: 150px;
 }
-.table_cell {
-    color:blue;
-}
 .ingredients_search_input {
     position:absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    right: 7%;
+    top: 200px;
 }
 .ingredients_pop_up {
     height:100vh;

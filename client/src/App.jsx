@@ -5,6 +5,8 @@ import Register from "./pages/Register";
 import Home from "./pages/Home";
 import Ingredients from "./pages/Ingredients";
 import Reports from "./pages/Reports";
+import Guests from "./pages/Guests";
+import Menu from "./pages/Menu"
 
 var trueOrFalse = localStorage.getItem('rememberMe') ==='true';
 
@@ -23,6 +25,8 @@ function App() {
         <Route exact path="/Register" component={Register}/>
         <Route exact path="/Malzemeler" component={Ingredients}/>
         <Route exact path="/Raporlar" component={Reports}/>
+        <Route exact path="/Misafirler" component={Guests}/>
+        <Route exact path="/Menu" component={Menu}/>
       </Switch>
     </Router>
   )

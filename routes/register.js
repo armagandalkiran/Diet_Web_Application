@@ -9,7 +9,7 @@ router.post("/register", (req,res)  => {
 
     // database connection 
     sql.connect(config, function (err) {
-        (err) ? console.log(err) : console.log("Database connected !");
+        (err) ? console.log(err) : console.log("Database connected ! register");
     
         const request = new sql.Request();
         request.query(`insert into users (name,surname,email,password,type)

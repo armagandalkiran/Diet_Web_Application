@@ -189,7 +189,6 @@ export default function Ingredients() {
       id: "",
       stock: ""
     });
-    
   }
 
   async function fetchData() {
@@ -218,7 +217,7 @@ export default function Ingredients() {
     rows.push(createData(key, ...sample)); 
     }
     return key
- });
+  });
 
   function createData(name, entry, sent, expr, company, stock,id) {
     return { name, entry, sent, expr, company, stock,id};

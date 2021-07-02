@@ -19,6 +19,7 @@ import KitchenRoundedIcon from '@material-ui/icons/KitchenRounded';
 import RestaurantMenuRoundedIcon from '@material-ui/icons/RestaurantMenuRounded';
 import HelpOutlineRoundedIcon from '@material-ui/icons/HelpOutlineRounded';
 import SettingsRoundedIcon from '@material-ui/icons/SettingsRounded';
+import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import "./Navbar.css";
 
 const drawerWidth = 240;
@@ -77,15 +78,15 @@ function Navbar(props) {
       <div style={{background:'blue'}} className={classes.toolbar}></div>
       <Divider />
       <List>
-        {['Anasayfa', 'Malzemeler', 'Raporlar', 'Menu'].map((text, index) => (
+        {['Anasayfa', 'Malzemeler', 'Raporlar', 'Menu', 'Misafirler'].map((text, index) => (
           <ListItem onClick={()=>routeChange(text)} button key={text}>
             <ListItemIcon >{
             index === 0 ? <HomeRoundedIcon/> 
-            : index === 1 ? <AssignmentRoundedIcon/>
-            : index === 2 ? <KitchenRoundedIcon/>
-            :  <RestaurantMenuRoundedIcon/>}
-            </ListItemIcon>
-
+            : index === 1 ? <KitchenRoundedIcon/>
+            : index === 2 ? <AssignmentRoundedIcon/>
+            : index === 3 ? <RestaurantMenuRoundedIcon/>
+            :  <PersonAddIcon/>}
+            </ListItemIcon>  
             <ListItemText primary={text} />
           </ListItem>
         ))}
