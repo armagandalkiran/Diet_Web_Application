@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar"
-import "./Reports.css"
+import "../css/Reports.css"
 
 function Reports() {
     return <div>

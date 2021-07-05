@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import DatePicker from "react-datepicker";
 import Axios from "axios";
 import "react-datepicker/dist/react-datepicker.css";
-import "./Guests.css";
+import "../css/Guests.css"
 
 function Guests () {
     const numberInterval = [...Array(100).keys()];

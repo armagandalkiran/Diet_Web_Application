@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import Axios from "axios";
 import {useHistory } from "react-router-dom";
-import "./Login.css";
+import "../css/Login.css"
 
 var isAuthenticated;
 

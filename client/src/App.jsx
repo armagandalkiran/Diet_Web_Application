@@ -6,7 +6,8 @@ import Home from "./pages/Home";
 import Ingredients from "./pages/Ingredients";
 import Reports from "./pages/Reports";
 import Guests from "./pages/Guests";
-import Menu from "./pages/Menu"
+import Menu from "./pages/Menu";
+import MakeMenu from "./pages/MakeMenu"
 
 var trueOrFalse = localStorage.getItem('rememberMe') ==='true';
 
@@ -27,6 +28,7 @@ function App() {
         <Route exact path="/Raporlar" component={Reports}/>
         <Route exact path="/Misafirler" component={Guests}/>
         <Route exact path="/Menu" component={Menu}/>
+        <Route exact path="/MenuOlustur" component={MakeMenu}/>
       </Switch>
     </Router>
   )

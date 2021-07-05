@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from "react";
 import Navbar from "../components/Navbar";
-import "./Ingredients.css";
+import "../css/Ingredients.css"
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { withStyles } from '@material-ui/core/styles';
