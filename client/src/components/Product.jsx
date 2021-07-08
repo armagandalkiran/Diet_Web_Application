@@ -5,11 +5,15 @@ import Fab from '@material-ui/core/Fab';
 
 function Product(props) {
 
+    function sendItems (event) {
+        props.onAdd(props.title);
+    }
+
     return (
         <div className="note">
             <h1>{props.title}</h1>
             <img alt="resim alani"/>
-            <Fab size="small">
+            <Fab onClick={sendItems} size="small">
                 <AddIcon/>
             </Fab>
         </div>

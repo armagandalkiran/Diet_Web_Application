@@ -1,56 +1,63 @@
 .menu_container {
-    margin-left: 240px;
-    padding: 2% 5%;
-    text-align:center;
-    position: relative;
+  margin-left: 240px;
+  padding: 2% 5%;
+  text-align:center;
+  position: relative;
 }
 .menu_list {
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
     
 }
 .categories {
-    float: left;
-    margin: 16px;
+  float: left;
+  margin: 16px;
 }
 
 .categories li {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .receipt{
-    float: right;
-    margin: 16px;
+  float: right;
+  margin: 16px;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+  width: 200px;
+  height: 400px;
+  overflow: auto;
 }
 .note_container{
-    margin-left: 240px;
-    margin-right: 100px;
-    width:500px;
+  margin-left: 240px;
+  margin-right: 100px;
+  width:500px;
 }
 .note {
-    background: #fff;
-    border-radius: 7px;
-    box-shadow: 0 2px 5px #ccc;
-    padding: 10px;
-    width: 200px;
-    margin: 16px;
-    float: left;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+  width: 200px;
+  margin: 16px;
+  float: left;
   }
   .note h1 {
-    font-weight: bold;
-    text-align:left;
-    font-size: 1.1em;
-    margin-bottom: 6px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+  font-weight: bold;
+  text-align:left;
+  font-size: 1.1em;
+  margin-bottom: 6px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
   }
   .note p {
-    font-size: 1.1em;
-    margin-bottom: 10px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
   }
 
   .note button {
