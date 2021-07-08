@@ -19,16 +19,16 @@
 .categories li {
   list-style-type: none;
 }
-
 .receipt{
+  position: relative;
+  padding: 2% 2%;
   float: right;
   margin: 16px;
   background: #fff;
   border-radius: 7px;
   box-shadow: 0 2px 5px #ccc;
-  padding: 10px;
   width: 200px;
-  height: 400px;
+  height: 200px;
   overflow: auto;
 }
 .note_container{
