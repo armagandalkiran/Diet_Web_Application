@@ -6,7 +6,7 @@ import Fab from '@material-ui/core/Fab';
 function Product(props) {
 
     function sendItems (event) {
-        props.onAdd(props.title,props.id);
+        props.onAdd(props.title);
     }
 
     return (

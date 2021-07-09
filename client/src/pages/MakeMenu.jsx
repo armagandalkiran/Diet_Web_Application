@@ -13,7 +13,7 @@ function MakeMenu() {
     const [cardItems,setCardItems] = useState([]);
     const [dayTime,setDayTime] = useState({
         date: "",
-        dayInterval: ""
+        dayInterval: "Sabah"
     });
     const [keepFoodIds,setKeepFoodIds] = useState([]);
     var keepFoodNames = [];
@@ -25,7 +25,7 @@ function MakeMenu() {
           .then(res => setFoods(res))
     }
     useEffect(() => {
-          fetchData();
+        fetchData();
     },[]);  
 
     async function fetchCategoryNames() {
@@ -42,19 +42,25 @@ function MakeMenu() {
         setClickedItem(categoryItem);
     }
 
-    function addToCart(newItem,newItemId) {
-        if(cardItems.includes(newItem)){
-            return null;
+    function addToCart(newItem) {
+        if(!cardItems.includes(newItem)){
+            setCardItems(prevItems =>{
+                return [...prevItems,newItem];
+            })
         }
-        setCardItems(prevItems =>{
-            return [...prevItems,newItem];
+        foods.forEach((food) => {
+            if(food.name[2].includes(newItem)){
+                keepFoodIds.push(food.id[1]);
+            }
         })
-        setKeepFoodIds(prevValue=>{
-            return [...prevValue,newItemId]
-        });
+        // setKeepFoodIds(prevValue=>{
+        //     return [...prevValue,newItemId]
+        // });
+        
     }
     
     function handleDayChange(event){
+
         const {name,value} = event.target;
         setDayTime(prevValue =>{
             return {
@@ -75,6 +81,7 @@ function MakeMenu() {
             dayInterval:""
         })
         setCardItems([]);
+        setKeepFoodIds([]);
     }
 
     // foods.forEach((food,index)=>{

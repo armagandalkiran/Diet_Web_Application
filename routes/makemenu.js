@@ -21,19 +21,22 @@ router.get("/makemenu",(req,res) => {
 
 router.post("/makemenu", (req,res)  => {
     
-    console.log(req.body);
-
-    // database connection 
-    // sql.connect(config, function (err) {
-    //     (err) ? console.log(err) : console.log("Database connected ! register");
+    const {date,dayInterval,foodIds} = req.body;
     
-    //     const request = new sql.Request();
-    //     request.query(`insert into users (name,surname,email,password,type)
-    //     values ('${name}','${surname}','${email}','${password}',${type})`, (err) => {
-      
-    //     (err) ? console.log(err) : res.send();
-    //     });
-    // });
+    // database connection 
+    sql.connect(config, function (err) {
+        (err) ? console.log(err) : console.log("Database connected ! register");
+    
+        const request = new sql.Request();
+        foodIds.forEach((foodId)=>{
+            request.query(`insert into menus (food_id,day_time,date)
+            values (${foodId},'${dayInterval}','${date}')`, (err) => {
+          
+            (err) ? console.log(err) : console.log("islem basarili");
+            });
+        })
+
+    });
     
 });
 
