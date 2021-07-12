@@ -1,8 +1,10 @@
-.menu_container {
-  margin-left: 240px;
-  padding: 2% 5%;
-  text-align:center;
-  position: relative;
+
+
+.menubox_container{
+  margin-top:50px;
+  display:flex;
+  flex-direction: row;
+  justify-content:space-evenly;
 }
 .menu_list {
   list-style-type: none;
@@ -32,9 +34,8 @@
   overflow: auto;
 }
 .note_container{
-  margin-left: 240px;
-  margin-right: 100px;
-  width:500px;
+  margin: auto;
+  width: 500px;
 }
 .note {
   background: #fff;
@@ -78,3 +79,51 @@
     transition: 0.2s;
     background:rgb(41, 208, 250);
   }
+  
+  .box {
+    width:200px;
+  }
+  
+  .box h1 {
+    transform: rotate(-2deg);
+    padding: 0.2rem 1.2rem;
+    border-radius: 20% 5% 20% 5%/5% 0% 25% 30%;
+    background-color: #4fbeff;
+    font-size: 1.5rem;
+  }
+
+  /*
+  IF TABLE NEEDED
+  
+  
+  .menu-content-table{
+    border-collapse: collapse;
+    font-size: 0.9em;
+    min-width: 300px;
+    margin: 5% auto;
+  }
+  .menu-content-table thead tr {
+    background-color:#2b95af;
+    color:#fff;
+    text-align: left;
+    font-weight: bold;
+  }
+  .menu-content-table tbody tr {
+    text-align: left;
+    border-bottom: 1px solid #dddddd
+  }
+  .menu-content-table tbody tr:hover {
+    background-color: #ccc;
+    cursor: pointer;
+  }
+  .menu-content-table th,
+  .menu-content-table td
+  {
+    padding: 12px 0;
+  }
+  .menu-content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #2b95af;
+  } */
+
+  
+  

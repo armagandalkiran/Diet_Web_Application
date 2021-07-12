@@ -239,84 +239,86 @@ export default function Ingredients() {
   }
 
   return (
-    <div className="ingredients_container"><Navbar/>
-      <input onChange={handleSearch} type="text" className="ingredients_search_input" placeholder="Ara"></input>
-      <div className="ingredients_table">
-      <main>
-      <Paper style={{ height: 400, width: '100%' }}>
-        <VirtualizedTable
-          rowCount={rows.length}
-          rowGetter={({ index }) => rows[index]}
-          columns={[
+    <div><Navbar/>
+      <div className="ingredients_container">
+        <input onChange={handleSearch} type="text" className="ingredients_search_input" placeholder="Ara"></input>
+        <div className="ingredients_table">
+        <main>
+        <Paper style={{ height: 400, width: '100%' }}>
+          <VirtualizedTable
+            rowCount={rows.length}
+            rowGetter={({ index }) => rows[index]}
+            columns={[
+                {
+                width: 200,
+                label: 'Ürün Adı',
+                dataKey: 'name',   
+              },  
               {
-              width: 200,
-              label: 'Ürün Adı',
-              dataKey: 'name',   
-            },  
-            {
-              width: 160,
-              label: 'Alınan Tarih',
-              dataKey: 'entry',
-              numeric: false,
-            },
-            {
-              width: 160,
-              label: 'Gönderilen Tarih',
-              dataKey: 'sent',
-              numeric: false,
-            },
-            {
-              width: 160,
-              label: 'Son Kullanım Tarihi\u00A0(g)',
-              dataKey: 'expr',
-              numeric: false,
-            },
-            {
-              width: 160,
-              label: 'Teslim Eden Firma\u00A0(g)',
-              dataKey: 'company',
-              numeric: false,
-            },
-            {
-              width: 160,
-              label: 'Stok',
-              dataKey: 'stock',
-              numeric: false,
-            },
-          ]}
-          // onRowClick={({index}) => handleOnClick(rows[index])}
-          onRowClick={({index}) => handleClickOpen(rows[index])}
-          
-        />
-      </Paper>
-      </main>
-      {/* THIS PART MUST BE COMPONENT TURN BACK HERE */}
-      <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title">Baslik kismi gerekliyse malzeme adi girilebilir</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            Yeni stok miktarini giriniz.
-          </DialogContentText>
-          <TextField
-            autoFocus
-            margin="dense"
-            id="name"
-            value={changedIngredient.stock}
-            label="Stok (gr)"
-            fullWidth
-            onChange={handleChange}
-            name="stock"
+                width: 160,
+                label: 'Alınan Tarih',
+                dataKey: 'entry',
+                numeric: false,
+              },
+              {
+                width: 160,
+                label: 'Gönderilen Tarih',
+                dataKey: 'sent',
+                numeric: false,
+              },
+              {
+                width: 160,
+                label: 'Son Kullanım Tarihi\u00A0(g)',
+                dataKey: 'expr',
+                numeric: false,
+              },
+              {
+                width: 160,
+                label: 'Teslim Eden Firma\u00A0(g)',
+                dataKey: 'company',
+                numeric: false,
+              },
+              {
+                width: 160,
+                label: 'Stok',
+                dataKey: 'stock',
+                numeric: false,
+              },
+            ]}
+            // onRowClick={({index}) => handleOnClick(rows[index])}
+            onRowClick={({index}) => handleClickOpen(rows[index])}
+            
           />
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            Iptal
-          </Button>
-          <Button onClick={() => modalApprove()} color="primary">
-            Onayla
-          </Button>
-        </DialogActions>
-      </Dialog>
+        </Paper>
+        </main>
+        {/* THIS PART MUST BE COMPONENT TURN BACK HERE */}
+        <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+          <DialogTitle id="form-dialog-title">Baslik kismi gerekliyse malzeme adi girilebilir</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              Yeni stok miktarini giriniz.
+            </DialogContentText>
+            <TextField
+              autoFocus
+              margin="dense"
+              id="name"
+              value={changedIngredient.stock}
+              label="Stok (gr)"
+              fullWidth
+              onChange={handleChange}
+              name="stock"
+            />
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose} color="primary">
+              Iptal
+            </Button>
+            <Button onClick={() => modalApprove()} color="primary">
+              Onayla
+            </Button>
+          </DialogActions>
+        </Dialog>
+        </div>
       </div>
     </div>
   );

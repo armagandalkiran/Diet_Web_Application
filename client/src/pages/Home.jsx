@@ -1,13 +1,20 @@
 import React from "react";
-import Navbar from "../components/Navbar"
+import Navbar from "../components/Navbar";
+import "../css/MakeMenu.css";
 
 function Home() {
 
 
-    return <div>
-        <Navbar/>
-            sadfaf
-    </div>
+    return (<main>
+    <Navbar/>
+        <div>
+            deneme
+        </div>
+    </main>
+        
+
+    
+    )
 
 }
 

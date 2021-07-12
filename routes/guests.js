@@ -46,4 +46,17 @@ router.post("/guests",(req,res) => {
     });
 });
 
+router.get("/guests",(req,res) => {
+
+    sql.connect(config, function (err) {
+       (err) ? console.log(err) : console.log("Database connected guests!");
+   
+       const request = new sql.Request();
+       request.query(`select * from guests`, (err,result) => {
+           (err) ? console.log(err) : res.json(result.recordset);
+           //res.json(result.recordset)
+       });
+   });
+});
+
 module.exports = router;

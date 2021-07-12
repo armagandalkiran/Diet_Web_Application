@@ -1,5 +1,5 @@
 .ingredients_container {
-    margin-left: 270px;
+    margin-left: 240px;
     padding: 2% 5%;
     position: relative;
 }
@@ -7,9 +7,9 @@
     margin-top: 150px;
 }
 .ingredients_search_input {
-    position:absolute;
-    right: 7%;
-    top: 200px;
+    
+   
+    
 }
 .ingredients_pop_up {
     height:100vh;

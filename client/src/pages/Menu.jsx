@@ -25,8 +25,8 @@ function Menu() {
                 <div className="menu_contents">
                     <h1>Aylık menü oluşturabilir,görüntüleyebilir veya düzenleyebilirsiniz.</h1>
                     <button onClick={() => handleClick("/MenuOlustur")}>Menü oluştur</button>
-                    <button onClick={() => handleClick("/Anasayfa")}>Menü görüntüle</button>
-                    <button onClick={() => handleClick("/Misafirler")}>Toplam gramaj</button>
+                    <button onClick={() => handleClick("/MenuGoruntule")}>Menü görüntüle</button>
+                    <button onClick={() => handleClick("/ToplamGramaj")}>Toplam gramaj</button>
                 </div>
             </div>
     </section>

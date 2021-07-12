@@ -5,7 +5,7 @@ import "../css/Reports.css"
 function Reports() {
     return <div>
         <Navbar/>
-         <h1 className="reports_header">reports</h1> 
+         <div className="reports_header">reports</div> 
     </div>
 }
 

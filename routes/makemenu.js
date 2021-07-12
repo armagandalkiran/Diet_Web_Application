@@ -32,7 +32,7 @@ router.post("/makemenu", (req,res)  => {
             request.query(`insert into menus (food_id,day_time,date)
             values (${foodId},'${dayInterval}','${date}')`, (err) => {
           
-            (err) ? console.log(err) : console.log("islem basarili");
+            (err) ? console.log(err) : console.log("successfully inserted to menus");
             });
         })
 

@@ -113,7 +113,7 @@ function MakeMenu() {
                     {cardItems.length > 0 
                     ? 
                     <div>
-                        <input name="date" type="date" value={dayTime.date} onChange={handleDayChange} ></input>
+                        <input name="date" type="date" value={dayTime.date} onChange={handleDayChange}></input>
                         <select name="dayInterval" value={dayTime.dayInterval} onChange={handleDayChange}>
                             {staticDays.map((day) => (
                                 <option key={day}>{day}</option>

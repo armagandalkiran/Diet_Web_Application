@@ -1,11 +1,10 @@
 .menu_container {
-    margin-left: 240px;
     padding: 2% 5%;
     text-align:center;
     position: relative;
-    width:80%;
     height: 60vh;
 }
+
 .menu_contents {
     position:absolute;
     top:50%;
