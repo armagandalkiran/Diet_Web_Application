@@ -33,64 +33,18 @@
   height: 200px;
   overflow: auto;
 }
-.note_container{
-  margin: auto;
-  width: 500px;
-}
-.note {
-  background: #fff;
-  border-radius: 7px;
-  box-shadow: 0 2px 5px #ccc;
-  padding: 10px;
-  width: 200px;
-  margin: 16px;
-  float: left;
-  }
-  .note h1 {
-  font-weight: bold;
-  text-align:left;
-  font-size: 1.1em;
-  margin-bottom: 6px;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  }
-  .note p {
-  font-size: 1.1em;
-  margin-bottom: 10px;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  }
 
-  .note button {
-    position: relative;
-    float: right;
-    margin-right: 10px;
-    color: #fff;
-    border: none;
-    width: 36px;
-    height: 36px;
-    cursor: pointer;
-    outline: none;
-    background-color:#2b95af;
-    border-radius:50%;
-  }
-  
-  .note button:hover{
-    transition: 0.2s;
-    background:rgb(41, 208, 250);
-  }
-  
-  .box {
-    width:200px;
-  }
-  
-  .box h1 {
-    transform: rotate(-2deg);
-    padding: 0.2rem 1.2rem;
-    border-radius: 20% 5% 20% 5%/5% 0% 25% 30%;
-    background-color: #4fbeff;
-    font-size: 1.5rem;
-  }
+.box {
+  width:200px;
+}
+
+.box h1 {
+  transform: rotate(-2deg);
+  padding: 0.2rem 1.2rem;
+  border-radius: 20% 5% 20% 5%/5% 0% 25% 30%;
+  background-color: #4fbeff;
+  font-size: 1.5rem;
+}
 
   /*
   IF TABLE NEEDED

@@ -1,0 +1,117 @@
+.building-info-boxes{
+    background-color:#fff;
+    width:300px;
+    height:170px;
+    margin:1rem 0;
+    box-shadow: 0 2px 5px #ccc;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.building-info-boxes:hover{
+    cursor: pointer;
+}
+
+.icon-cover-circle{
+    background-color: rgba(235, 205, 38, 0.2);
+    border-radius: 50%;
+    width:90px;
+    height:90px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-boxes-content{
+    height:100px;
+    display:flex;
+    flex-direction: column;
+    align-items:left;
+    justify-content: space-between;
+}
+
+.building-number{
+    color:rgba(39, 29, 85);
+    font-weight: bold;
+    font-size:4rem;
+    letter-spacing: 2px;
+}
+.building-description{
+    font-weight: bold;
+    color:rgba(39, 29, 85,0.4);
+}
+
+.home-container .bx {
+    color: rgba(235, 205, 38);
+    font-size:3.12rem;
+}
+
+.wide-info-boxes .bx {
+    color: rgba(39, 29, 85);
+}
+
+.wide-info-boxes .building-description {
+    color:rgba(39, 29, 85,0.6);
+    font-size: 2.5rem;
+}
+
+.wide-info-boxes:hover{
+    cursor:pointer;
+}
+
+.date {
+    color:rgba(39, 29, 85);
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px){
+    .building-info-boxes{
+        width:250px;
+        height:100px;
+    }
+    
+    .icon-cover-circle{
+        background-color: rgba(235, 205, 38, 0.2);
+        border-radius: 50%;
+        width:70px;
+        height:70px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .info-boxes-content{
+        height:70px;
+        display:flex;
+        flex-direction: column;
+        align-items:left;
+        justify-content: space-between;
+    }
+    
+    .building-number{
+        color:rgba(39, 29, 85);
+        font-weight: bold;
+        font-size:2rem;
+    }
+    .building-description{
+        font-weight: bold;
+        color:rgba(39, 29, 85,0.4);
+        font-size: 0.8rem;
+    }
+    
+    .home-container .bx {
+        color: rgba(235, 205, 38);
+        font-size:2rem;
+    } 
+
+}
+
+@media screen and (max-width: 1124px){
+    .home-container{
+        flex-wrap:wrap;
+    }
+}

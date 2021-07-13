@@ -3,6 +3,12 @@ const sql = require("mssql");
 const router = express.Router();
 const config = require("../dbconfig");
 
+let ts = Date.now();
+let date_ob = new Date(ts);
+let date = date_ob.getDate();
+let month = date_ob.getMonth() + 1;
+let year = date_ob.getFullYear();
+let keepTodaysDate = year + "-" + month + "-" + date;
 
 
 router.post("/guests",(req,res) => {
@@ -48,6 +54,7 @@ router.post("/guests",(req,res) => {
 
 router.get("/guests",(req,res) => {
 
+
     sql.connect(config, function (err) {
        (err) ? console.log(err) : console.log("Database connected guests!");
    
@@ -55,6 +62,21 @@ router.get("/guests",(req,res) => {
        request.query(`select * from guests`, (err,result) => {
            (err) ? console.log(err) : res.json(result.recordset);
            //res.json(result.recordset)
+       });
+   });
+});
+
+router.get("/guests/homepage",(req,res) => {
+
+    
+    sql.connect(config, function (err) {
+       (err) ? console.log(err) : console.log("Database connected guests!");
+   
+       const request = new sql.Request();
+       request.query(`select * from guests where date = '${keepTodaysDate}'`, (err,result) => {
+           (err) ? console.log(err) : res.json(result.recordset);
+           //res.json(result.recordset)
+           //use keepTodaysDate after testing.
        });
    });
 });

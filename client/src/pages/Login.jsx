@@ -51,30 +51,32 @@ export function Login() {
     }
 
     return (
-      
-        <div className="login_screen">
-            <h1 className="login_header">
-            -~ Login Page Boilerplate ~-
-          </h1>
-          <form className="form_container">
-            <input className="login_input"
-              onChange={handleChange}
-              name="email"
-              value={userInfo.email}
-              placeholder="Mail Adresiniz"
-            />
-            <input className="login_input"
-              onChange={handleChange}
-              name="password"
-              value={userInfo.password}
-              placeholder="Sifreniz"
-            />
-            <a className="register_directory" href="/register">Kayit ol</a>
-            <button className="login_button" onClick={login}>Giris Yap</button>
-          </form>
-          <footer>
-            © Görkem Armağan Dalkıran 2021
-          </footer>
+        
+        <div>
+          <div className="login_screen">
+            <div className="login-screen-icon-container">
+              <i className='bx bx-pulse'></i>
+            </div>
+            <form className="form_container">
+              <input className="login_input"
+                onChange={handleChange}
+                name="email"
+                value={userInfo.email}
+                placeholder="Kullanici Adi"
+              />
+              <input className="login_input"
+                onChange={handleChange}
+                name="password"
+                value={userInfo.password}
+                type="password"
+                placeholder="Sifre"
+              />
+              <button className="login_button" onClick={login}>Giris Yap</button>
+            </form>
+            <footer>
+              © Görkem Armağan Dalkıran 2021
+            </footer>
+          </div>
         </div>
     )
 }
