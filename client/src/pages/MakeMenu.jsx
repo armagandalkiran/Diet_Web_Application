@@ -92,7 +92,7 @@ function MakeMenu() {
 
     return <div>
         <Navbar/>
-        <div className="menu_container">
+        <div className="menu-container">
             <div className="categories">
                 <ul>
                     {categories.map((category,index)=>{

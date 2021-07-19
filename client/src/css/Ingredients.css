@@ -1,18 +1,95 @@
 .ingredients_container {
-    margin-left: 240px;
-    padding: 2% 5%;
+    padding: 2% 10%;
     position: relative;
 }
-.ingredients_table{
-    margin-top: 150px;
-}
+
 .ingredients_search_input {
-    
-   
-    
+    float:right;
 }
-.ingredients_pop_up {
-    height:100vh;
-    width: 100%;
-    background-color: red;
+
+.content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    table-layout: fixed;
 }
+
+.content-table thead tr {
+    background-color: rgba(71, 35, 217);
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+    width: 170px;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    text-align: center;
+}
+
+.content-table tbody tr:hover {
+    cursor: pointer;
+    background-color: rgb(228, 227, 227);
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.content-table tbody tr:nth-of-type(even):hover {
+    background-color: rgb(228, 227, 227);
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #4723D9;
+}
+
+.content-table tbody tr td:last-of-type {
+    padding:0;
+}
+
+.action-icons{
+    font-size: 1.3rem;
+    display:none;
+}
+
+.action-icons .bxs-plus-square{ 
+    color:rgb(0, 180, 0);
+}
+
+.action-icons .bxs-minus-square{ 
+    color:rgb(180, 0, 0);
+}
+
+.action-icons .bxs-plus-square:hover{ 
+    transition: 0.2s;
+    font-size: 1.4rem;
+}
+
+.action-icons .bxs-minus-square:hover{ 
+    transition: 0.2s;
+    font-size: 1.4rem;
+}
+
+.action-icons .bxs-edit:hover{ 
+    transition: 0.2s;
+    font-size: 1.4rem;
+}
+
+.content-table tbody tr:hover .action-icons {
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+  

@@ -5,9 +5,16 @@
     margin:0 3rem;
     flex-wrap:wrap;
     padding: 1rem;
+    -webkit-animation: fadein 2s;
+    animation: fadein 2s;
 }
+.home-boxes{
+    display:flex;
+    flex-wrap:wrap;
+}
+
 .wide-info-boxes{
-    background-image: url("../images/home_page_food.png");
+    background-image: linear-gradient(rgba(255, 255, 255, 0.4),rgba(255, 255, 255, 0.4)),url("../images/home_page_food.png");
     background-color:#fff;
     width:640px;
     height:170px;
@@ -20,6 +27,7 @@
     justify-content: space-between;
     padding: 1rem;   
 }
+
 .wide-info-boxes .building-description {
     color:rgba(39, 29, 85,0.6);
     font-size: 2.5rem;
@@ -32,23 +40,53 @@
 .wide-info-boxes:hover{
     cursor:pointer;
 }
+
+.notification-box{
+    background-image: linear-gradient(rgba(255, 255, 255, 0.4),rgba(255, 255, 255, 0.4)),url("../images/home_page_food.png");
+    background-color:#fff;
+    width:640px;
+    height:357px;
+    margin:1rem;
+    box-shadow: 0 2px 5px #ccc;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;   
+}
+
+.notification-box .building-description{
+    color:rgba(39, 29, 85,0.6);
+    font-size: 2.5rem;  
+}
+
+.notification-box .bx{
+    color: rgba(39, 29, 85);
+}
+
 .date {
     color:rgba(39, 29, 85);
     font-size: 3rem;
     font-weight: bold;
 }
+
 .greeting{
     margin:0 5rem;
     padding:0.5rem 0 0 2rem;
     color: rgba(39, 29, 85);
     display:flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
-
 .greeting p {
     font-size: 2rem;
     font-weight: bold;
+}
+
+.notification-box .bx{
+    font-size: 2.4rem;
+    margin-left: 20px;
 }
 
 @media screen and (max-width: 768px){
@@ -56,7 +94,7 @@
         font-size: 1.7rem;
     }
     .wide-info-boxes{
-        background-image: url("../images/home_page_food.png");
+        background-image: linear-gradient(rgba(255, 255, 255, 0.4),rgba(255, 255, 255, 0.4)),url("../images/home_page_food.png");
         background-color:#fff;
         width:300px;
         height:170px;
@@ -78,5 +116,15 @@
         color:rgba(39, 29, 85,0.6);
         font-size: 1.7rem;
     }
+    .home-boxes{
+        display:flex;
+        flex-direction:column;
+        align-items: center;
+        flex-wrap:wrap;
+    }
 }
 
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}

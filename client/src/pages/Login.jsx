@@ -46,7 +46,7 @@ export function Login() {
     function checkAuthentication () {
 
       if(isAuthenticated === true){
-        routeChange("/home");
+        routeChange("/Anasayfa");
       } 
     }
 
@@ -55,7 +55,7 @@ export function Login() {
         <div>
           <div className="login_screen">
             <div className="login-screen-icon-container">
-              <i className='bx bx-pulse'></i>
+              <i className='bx bx-pulse bx-tada'></i>
             </div>
             <form className="form_container">
               <input className="login_input"

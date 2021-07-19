@@ -26,6 +26,7 @@ function Home() {
         <Navbar/>
         <div className="greeting">
             {(parseInt(date.getHours()) < 6 || parseInt(date.getHours()) > 20) ? <p>İyi akşamlar,</p> : <p>İyi günler,</p>}
+            <p>{date.toLocaleDateString()}</p>
         </div>
         <div className="home-container">
             {[1,2,3,4].map((item,index)=>{
@@ -46,19 +47,21 @@ function Home() {
                     />
                 )           
             })}
-            <div className="wide-info-boxes">
-
-            </div>
-            <div className="wide-info-boxes">
-                <p className="building-description">Günün menüsünü görüntüleyin !</p>
-                <p className="date">{date.toLocaleDateString()}</p>
-            </div>
-            <div className="wide-info-boxes">
-
-            </div>
-            <div className="wide-info-boxes">
-
-            </div>
+            <div className="home-boxes">
+                <div className="notification-box">
+                    <p className="building-description">Bildirimler<i className='bx bxs-bell'></i></p>
+                </div>
+                <div>
+                    <div className="wide-info-boxes">
+                        <p className="building-description">Günün menüsünü görüntüleyin !</p>
+                        <i class='bx bxs-food-menu' ></i>
+                    </div>
+                    <div className="wide-info-boxes">
+                        <p className="building-description">Müşteri hizmetleri ile görüşün !</p>
+                        <i className='bx bx-question-mark'></i>
+                    </div>
+                </div>    
+            </div>    
         </div>
     </section>
     )

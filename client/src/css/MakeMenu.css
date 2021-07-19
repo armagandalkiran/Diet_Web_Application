@@ -1,5 +1,4 @@
 
-
 .menubox_container{
   margin-top:50px;
   display:flex;
@@ -46,38 +45,8 @@
   font-size: 1.5rem;
 }
 
-  /*
-  IF TABLE NEEDED
   
-  
-  .menu-content-table{
-    border-collapse: collapse;
-    font-size: 0.9em;
-    min-width: 300px;
-    margin: 5% auto;
-  }
-  .menu-content-table thead tr {
-    background-color:#2b95af;
-    color:#fff;
-    text-align: left;
-    font-weight: bold;
-  }
-  .menu-content-table tbody tr {
-    text-align: left;
-    border-bottom: 1px solid #dddddd
-  }
-  .menu-content-table tbody tr:hover {
-    background-color: #ccc;
-    cursor: pointer;
-  }
-  .menu-content-table th,
-  .menu-content-table td
-  {
-    padding: 12px 0;
-  }
-  .menu-content-table tbody tr:last-of-type {
-    border-bottom: 2px solid #2b95af;
-  } */
+
 
   
   

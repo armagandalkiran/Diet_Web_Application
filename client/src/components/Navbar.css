@@ -129,7 +129,7 @@ a{
 
 .nav__logo-icon{
   font-size: 2.5rem;
-  color: var(--white-color);
+  color:rgba(235, 205, 38);
 }
 
 .nav__logo-name{

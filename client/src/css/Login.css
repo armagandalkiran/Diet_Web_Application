@@ -50,7 +50,8 @@
     color:rgb(179, 155, 155);
 }
 .form_container {
-
+    -webkit-animation: fadein 2s;
+    animation: fadein 2s;
 }
 .primary {
     color: blue;
@@ -90,4 +91,9 @@ footer {
     text-align: right;
     text-decoration: none;
     color:white;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }

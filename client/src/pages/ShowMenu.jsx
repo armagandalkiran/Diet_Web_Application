@@ -30,7 +30,7 @@ function ShowMenu() {
 
     return <div>
         <Navbar/>
-        <div className="menu_container">
+        <div className="menu-container">
             <label>Tarih seciniz</label>
             <input name="date" type="date" value={dates.date} onChange={handleDateChange}></input>
             <div className="menubox_container">

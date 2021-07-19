@@ -1,160 +1,12 @@
 import React,{useState,useEffect} from "react";
 import Navbar from "../components/Navbar";
-import "../css/Ingredients.css"
-import PropTypes from 'prop-types';
-import clsx from 'clsx';
-import { withStyles } from '@material-ui/core/styles';
-import TableCell from '@material-ui/core/TableCell';
-import Paper from '@material-ui/core/Paper';
-import { AutoSizer, Column, Table } from 'react-virtualized';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
+import Modal from "../components/Modal";
+import "../css/Ingredients.css";
+
+
 import Axios from "axios";
 
-const styles = (theme) => ({
-  root: {
-    fontSize: '200px',
-  },
-  flexContainer: {
-    display: 'flex',
-    alignItems: 'center',
-    boxSizing: 'border-box',
-  },
-  table: {
-    // temporary right-to-left patch, waiting for
-    // https://github.com/bvaughn/react-virtualized/issues/454
-    '& .ReactVirtualized__Table__headerRow': {
-      flip: false,
-      paddingRight: theme.direction === 'rtl' ? '0 !important' : undefined,
-    },
-  },
-  tableRow: {
-    cursor: 'pointer',
-  },
-  tableRowHover: {
-    '&:hover': {
-      backgroundColor: theme.palette.grey[200],
-    },
-  },
-  tableCell: {
-    flex: 1,
-  },
-  noClick: {
-    cursor: 'initial',
-  },
-});
 
-class MuiVirtualizedTable extends React.PureComponent {
-  static defaultProps = {
-    headerHeight: 70,
-    rowHeight: 60,
-  };
-
-  getRowClassName = ({ index }) => {
-    const { classes, onRowClick } = this.props;
-    return clsx(classes.tableRow, classes.flexContainer, {
-      [classes.tableRowHover]: index !== -1 && onRowClick != null,
-    });
-  };
-
-  cellRenderer = ({ cellData, columnIndex }) => {
-    const { columns, classes, rowHeight, onRowClick } = this.props;
-    return (
-      <TableCell
-        component="div"
-        className={clsx(classes.tableCell, classes.flexContainer, {
-          [classes.noClick]: onRowClick == null,
-        })}
-        variant="body"
-        style={{ height: rowHeight }}
-        align={(columnIndex != null && columns[columnIndex].numeric) || false ? 'right' : 'left'}
-      >
-        {cellData}
-        
-      </TableCell>
-    );
-  };
-
-  headerRenderer = ({ label, columnIndex }) => {
-    const { headerHeight, columns, classes } = this.props;
-
-    return (
-      <TableCell
-        component="div"
-        className={clsx(classes.tableCell, classes.flexContainer, classes.noClick)}
-        variant="head"
-        style={{ height: headerHeight }}
-        align={columns[columnIndex].numeric || false ? 'right' : 'left'}
-      >
-        <span>{label}</span>
-      </TableCell>
-    );
-  };
-
-  render() {
-    const { classes, columns, rowHeight, headerHeight, ...tableProps } = this.props;
-    return (
-      <AutoSizer>
-        {({ height, width }) => (
-          <Table
-            height={height}
-            width={width}
-            rowHeight={rowHeight}
-            gridStyle={{
-              direction: 'inherit',
-            }}
-            headerHeight={headerHeight}
-            className={classes.table}
-            {...tableProps}
-            rowClassName={this.getRowClassName}
-          >
-            {columns.map(({ dataKey, ...other }, index) => {
-              return (
-                <Column
-                  key={dataKey}
-                  headerRenderer={(headerProps) =>
-                    this.headerRenderer({
-                      ...headerProps,
-                      columnIndex: index,
-                    })
-                  }
-                  className={classes.flexContainer}
-                  cellRenderer={this.cellRenderer}
-                  dataKey={dataKey}
-                  {...other}
-                />
-              );
-            })}
-          </Table>
-        )}
-      </AutoSizer> 
-    );
-  }
-}
-
-MuiVirtualizedTable.propTypes = {
-  classes: PropTypes.object.isRequired,
-  columns: PropTypes.arrayOf(
-    PropTypes.shape({
-      dataKey: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
-      numeric: PropTypes.bool,
-      width: PropTypes.number.isRequired,
-    }),
-  ).isRequired,
-  headerHeight: PropTypes.number,
-  onRowClick: PropTypes.func,
-  rowHeight: PropTypes.number,
-};
-
-const VirtualizedTable = withStyles(styles)(MuiVirtualizedTable);
-
-// ---
 export default function Ingredients() {
 
   const [ingredients,setIngredients] = useState([]);
@@ -240,84 +92,51 @@ export default function Ingredients() {
 
   return (
     <div><Navbar/>
+      <Modal
+        opened={open}
+        closed={handleClose}
+      />
       <div className="ingredients_container">
         <input onChange={handleSearch} type="text" className="ingredients_search_input" placeholder="Ara"></input>
         <div className="ingredients_table">
-        <main>
-        <Paper style={{ height: 400, width: '100%' }}>
-          <VirtualizedTable
-            rowCount={rows.length}
-            rowGetter={({ index }) => rows[index]}
-            columns={[
-                {
-                width: 200,
-                label: 'Ürün Adı',
-                dataKey: 'name',   
-              },  
-              {
-                width: 160,
-                label: 'Alınan Tarih',
-                dataKey: 'entry',
-                numeric: false,
-              },
-              {
-                width: 160,
-                label: 'Gönderilen Tarih',
-                dataKey: 'sent',
-                numeric: false,
-              },
-              {
-                width: 160,
-                label: 'Son Kullanım Tarihi\u00A0(g)',
-                dataKey: 'expr',
-                numeric: false,
-              },
-              {
-                width: 160,
-                label: 'Teslim Eden Firma\u00A0(g)',
-                dataKey: 'company',
-                numeric: false,
-              },
-              {
-                width: 160,
-                label: 'Stok',
-                dataKey: 'stock',
-                numeric: false,
-              },
-            ]}
-            // onRowClick={({index}) => handleOnClick(rows[index])}
-            onRowClick={({index}) => handleClickOpen(rows[index])}
-            
-          />
-        </Paper>
-        </main>
-        {/* THIS PART MUST BE COMPONENT TURN BACK HERE */}
-        <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-          <DialogTitle id="form-dialog-title">Baslik kismi gerekliyse malzeme adi girilebilir</DialogTitle>
-          <DialogContent>
-            <DialogContentText>
-              Yeni stok miktarini giriniz.
-            </DialogContentText>
-            <TextField
-              autoFocus
-              margin="dense"
-              id="name"
-              value={changedIngredient.stock}
-              label="Stok (gr)"
-              fullWidth
-              onChange={handleChange}
-              name="stock"
-            />
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={handleClose} color="primary">
-              Iptal
-            </Button>
-            <Button onClick={() => modalApprove()} color="primary">
-              Onayla
-            </Button>
-          </DialogActions>
-        </Dialog>
+          <table class="content-table">
+            <thead>
+              <tr>
+                <th>Malzeme adı</th>
+                <th>Eklenme tarihi</th>
+                <th>Gönderim tarihi</th>
+                <th>Son tüketim tarihi</th>
+                <th>Teslim eden firma</th>
+                <th>Alınan miktar</th>
+                <th>Kullanılan miktar</th>
+                <th>Güncel stok</th>
+                <th>İşlemler</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((row,index)=>{
+                return (
+                  <tr key={index}>
+                    <td>{row.name}</td>
+                    <td>{row.entry}</td>
+                    <td>{row.sent}</td>
+                    <td>{row.expr}</td>
+                    <td>{row.name}</td>
+                    <td>{row.name}</td>
+                    <td>{row.name}</td>
+                    <td>{row.name}</td>
+                    <td>
+                      <div className="action-icons">
+                        <i onClick={handleClickOpen} className="bx bxs-edit"></i>
+                        <i className="bx bxs-plus-square"></i>
+                        <i className="bx bxs-minus-square"></i>
+                      </div>  
+                    </td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

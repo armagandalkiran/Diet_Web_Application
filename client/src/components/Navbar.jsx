@@ -27,7 +27,7 @@ function Navbar(){
               <nav className="nav">
                   <div>
                       <a href="Anasayfa" className="nav__logo">
-                          <i className='bx bxs-heart nav__logo-icon'></i>
+                          <i className='bx bx-pulse nav__logo-icon'></i>
                           <span className="nav__logo-name">Dietry</span>
                       </a>
 
@@ -65,7 +65,7 @@ function Navbar(){
 
                   <a href="#" className="nav__link">
                       <i className='bx bx-log-out nav__icon' ></i>
-                      <span className="nav__name">Log Out</span>
+                      <span className="nav__name">Çıkış</span>
                   </a>
               </nav>
           </div>
