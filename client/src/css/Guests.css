@@ -1,8 +1,105 @@
-.guests_container {
-    text-align: center;
-    padding: 2% 5%;
-    position: relative;
+
+.guests-form-container{
+    text-align:center;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:20rem;
+    height:38rem;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.4),rgba(255, 255, 255, 0.4)),url("../images/home_page_food.png");
+    box-shadow: 0 2px 5px #ccc;
+    border-radius: 1rem;
+    background-color:#fff;
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    font-weight: bold;
+    margin-top:40px;
 }
-.guests_combo{
-    
+
+.guests-form-button{
+    margin: 2% 0;
+    width: 150px;
+    height: 35px;
+    font-size: 1.5rem;
+    border:1px solid;
+    border-color:#4723D9;
+    background-color: #4723D9;
+    border-radius:10px;
+    color:rgba(235, 205, 38);
+    cursor:pointer;
+}
+
+.guests-form-button:hover{
+    transition: 0.4s;
+    background-color: #603dee;
+}
+
+.monthly-total-guest-button{
+    margin: 3rem 5rem;
+    width: 250px;
+    height: 35px;
+    font-size: 1.5rem;
+    border:1px solid;
+    border-color:#4723D9;
+    background-color: #4723D9;
+    border-radius:10px;
+    color:rgba(235, 205, 38);
+    cursor:pointer;
+}
+
+.guests-incremental-button{
+    height: 33px;
+    width: 33px;
+    border-radius: 50%;
+    border:2px solid #beb8b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:large;
+    color:#978f8f;
+    background-color: white;
+    cursor:pointer;
+    font-weight: bold;
+}
+
+.guests-bigger-incremental-button{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border:2px solid #beb8b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:1.1rem;
+    color:#978f8f;
+    font-weight: bold;
+    background-color: #eee;
+    cursor:pointer;
+}
+
+.guests-bigger-incremental-button:hover{
+    border-color:black;
+    color:black;
+}
+
+.guests-incremental-button:hover{
+    border-color:black;
+    color:black;
+}
+
+.guests-form-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 0 1rem;
+}
+
+.guests-form-row-output{
+    font-weight: bold;
+    font-size:1.5rem;
+    width:40px;
 }

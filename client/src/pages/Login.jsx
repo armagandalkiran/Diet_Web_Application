@@ -36,7 +36,7 @@ export function Login() {
 
         e.preventDefault();
         Axios.post("/",userInfo).then(response=>{
-            console.log(response);
+            // console.log(response);
             isAuthenticated = response.data;
             localStorage.setItem('rememberMe',isAuthenticated);
             checkAuthentication();

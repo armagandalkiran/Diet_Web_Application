@@ -7,6 +7,9 @@ let ts = Date.now();
 let date_ob = new Date(ts);
 let date = date_ob.getDate();
 let month = date_ob.getMonth() + 1;
+if (month / 10 < 1){
+    month = "0" + month;
+}
 let year = date_ob.getFullYear();
 let keepTodaysDate = year + "-" + month + "-" + date;
 
@@ -67,14 +70,14 @@ router.get("/guests",(req,res) => {
 });
 
 router.get("/guests/homepage",(req,res) => {
-
+    console.log(keepTodaysDate)
     
     sql.connect(config, function (err) {
        (err) ? console.log(err) : console.log("Database connected guests!");
    
        const request = new sql.Request();
        request.query(`select * from guests where date = '${keepTodaysDate}'`, (err,result) => {
-           (err) ? console.log(err) : res.json(result.recordset);
+           (err) ? console.log(err) : res.json(result.recordset)
            //res.json(result.recordset)
            //use keepTodaysDate after testing.
        });

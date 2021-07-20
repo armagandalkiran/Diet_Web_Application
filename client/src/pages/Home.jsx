@@ -54,7 +54,7 @@ function Home() {
                 <div>
                     <div className="wide-info-boxes">
                         <p className="building-description">Günün menüsünü görüntüleyin !</p>
-                        <i class='bx bxs-food-menu' ></i>
+                        <i className='bx bxs-food-menu' ></i>
                     </div>
                     <div className="wide-info-boxes">
                         <p className="building-description">Müşteri hizmetleri ile görüşün !</p>

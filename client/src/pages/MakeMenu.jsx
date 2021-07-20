@@ -7,9 +7,28 @@ import Axios from "axios";
 function MakeMenu() {
 
     const staticDays = ["Sabah","Ogle","Ikindi Ara","Aksam","Gece Ara"];
+    const categories = ["Kahvaltılık",
+        "Ekmekler",
+        "İçecekler",
+        "Meyveler",
+        "Çorbalar",
+        "Yumurta Yemekleri",
+        "Zeytinyağlılar ve Etsiz Sebze",
+        "Etli Sebze Yemekleri",
+        "Kurubaklagil Yemekleri",
+        "Et Yemekleri",
+        "Köfteler",
+        "Tavuk ve Hindi Yemekleri",
+        "Balık",
+        "Pilav ve Makarna",
+        "Yoğurt ve Salata",
+        "Börek ve Pide",
+        "Tatlılar",
+        "Pastacılık Ürünleri"
+    ]
     const [foods,setFoods] = useState([]);
-    const [clickedItem,setClickedItem] = useState("");
-    const [categories,setCategories] = useState([]);
+    const [clickedItem,setClickedItem] = useState("Kahvaltılık");
+    // const [categories,setCategories] = useState([]);
     const [cardItems,setCardItems] = useState([]);
     const [dayTime,setDayTime] = useState({
         date: "",
@@ -28,15 +47,15 @@ function MakeMenu() {
         fetchData();
     },[]);  
 
-    async function fetchCategoryNames() {
-        const res = await fetch("/categories");
-        res
-          .json()
-          .then(res => setCategories(res))
-    }
-    useEffect(() => {
-          fetchCategoryNames();
-    },[]); 
+    // async function fetchCategoryNames() {
+    //     const res = await fetch("/categories");
+    //     res
+    //       .json()
+    //       .then(res => setCategories(res))
+    // }
+    // useEffect(() => {
+    //       fetchCategoryNames();
+    // },[]); 
       
     function handleCategoryClick(categoryItem){
         setClickedItem(categoryItem);
@@ -92,39 +111,16 @@ function MakeMenu() {
 
     return <div>
         <Navbar/>
-        <div className="menu-container">
+        <div className="makemenu-container">
             <div className="categories">
                 <ul>
                     {categories.map((category,index)=>{
                         return (   
-                        <li key={index} onClick={() => handleCategoryClick(category.name)}>{category.name}</li>
+                        <li key={index} onClick={() => handleCategoryClick(category)}>{category}</li>
                         )
                     })}
                 </ul>
             </div>
-            <form>
-                <div className="receipt">
-                    <hr></hr>
-                    {cardItems.map((item,index)=>{
-                        return <p key = {index}>
-                            {item}
-                        </p>
-                    })}
-                    {cardItems.length > 0 
-                    ? 
-                    <div>
-                        <input name="date" type="date" value={dayTime.date} onChange={handleDayChange}></input>
-                        <select name="dayInterval" value={dayTime.dayInterval} onChange={handleDayChange}>
-                            {staticDays.map((day) => (
-                                <option key={day}>{day}</option>
-                            ))}
-                        </select>
-                        <button onClick={handleReceiptButtonClick}>Gönder</button>
-                    </div> 
-                    : 
-                    <p>Henuz bir sey eklemediniz</p>}
-                </div>   
-            </form>
             <div className="note_container">
                 {foods.map((food,index) => {
                     if(food.name[0] === clickedItem) {
@@ -142,6 +138,36 @@ function MakeMenu() {
                     return null
                 })}
             </div>   
+            <form>
+                <div className="receipt">
+                    <div className="receipt-item-container">
+                        {cardItems.map((item,index)=>{
+                            return <span className="item-icon-container">
+                                <p className="basket-item" key = {index}>
+                                    {item}
+                                </p>
+                                <i onClick={()=>{setCardItems(cardItems.filter((item,filterIndex)=>filterIndex !== index))}} class='bx bx-trash'></i>
+                            </span>
+                        })}
+                    </div>
+                    {cardItems.length > 0 
+                    ? 
+                    <div className="basket-operation-items">
+                        <input name="date" type="date" value={dayTime.date} onChange={handleDayChange}></input>
+                        <select name="dayInterval" value={dayTime.dayInterval} onChange={handleDayChange}>
+                            {staticDays.map((day) => (
+                                <option key={day}>{day}</option>
+                            ))}
+                        </select>
+                        <button className="menu-buttons" onClick={handleReceiptButtonClick}>Menüyü Gönder</button>
+                    </div> 
+                    : 
+                    <div>
+                    <p>Henüz bir şey eklemediniz.</p>
+                    <i class='bx bx-basket'></i>
+                    </div>}
+                </div>   
+            </form>
         </div>
     </div>
 }
