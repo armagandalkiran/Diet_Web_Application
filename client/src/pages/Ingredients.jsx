@@ -99,7 +99,7 @@ export default function Ingredients() {
       <div className="ingredients_container">
         <input onChange={handleSearch} type="text" className="ingredients_search_input" placeholder="Ara"></input>
         <div className="ingredients_table">
-          <table class="content-table">
+          <table className="content-table">
             <thead>
               <tr>
                 <th>Malzeme adı</th>

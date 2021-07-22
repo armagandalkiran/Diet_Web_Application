@@ -61,12 +61,12 @@ function Navbar(){
                               <span className="nav__name">Analytics</span>
                           </NavLink>  */}
                       </div>
-                  </div>
+                    </div>
 
-                  <a href="#" className="nav__link">
+                    <a href="Menu" className="nav__link">
                       <i className='bx bx-log-out nav__icon' ></i>
                       <span className="nav__name">Çıkış</span>
-                  </a>
+                    </a>
               </nav>
           </div>
       </div>

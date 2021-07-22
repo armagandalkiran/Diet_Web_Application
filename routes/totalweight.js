@@ -10,8 +10,9 @@ router.get("/totalweight",(req,res) => {
    
        const request = new sql.Request();
        request.query(`select * 
-       from foods f, menus m,food_supplies fs,categories c
-       where f.id = m.food_id AND c.ID = f.category_id AND fs.id = f.supply_id`, (err,result) => {
+       from foods f, menus m,food_supplies fs,categories c,guests g
+       where f.id = m.food_id AND c.ID = f.category_id AND fs.id = f.supply_id
+       AND g.day_time = m.day_time AND m.date = g.date `, (err,result) => {
            (err) ? console.log(err) : res.json(result.recordset);
            //res.json(result.recordset)
        });

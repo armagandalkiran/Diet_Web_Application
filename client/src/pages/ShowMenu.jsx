@@ -46,7 +46,7 @@ function ShowMenu() {
                                     }
                                     else if(menuItem.day_time === day) {
                                         trackDuplicate.push(menuItem.name)
-                                        return <li key={index}>{menuItem.name}</li>
+                                        return <li className="box-items" key={index}>{menuItem.name}</li>
                                     }
                                 } return null;
                             })}

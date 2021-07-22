@@ -70,13 +70,26 @@ router.get("/guests",(req,res) => {
 });
 
 router.get("/guests/homepage",(req,res) => {
-    console.log(keepTodaysDate)
     
     sql.connect(config, function (err) {
        (err) ? console.log(err) : console.log("Database connected guests!");
    
        const request = new sql.Request();
        request.query(`select * from guests where date = '${keepTodaysDate}'`, (err,result) => {
+           (err) ? console.log(err) : res.json(result.recordset)
+           //res.json(result.recordset)
+           //use keepTodaysDate after testing.
+       });
+   });
+});
+
+router.get("/guests/totalguest",(req,res) => {
+    
+    sql.connect(config, function (err) {
+       (err) ? console.log(err) : console.log("Database connected guests!");
+   
+       const request = new sql.Request();
+       request.query(`select * from guests`, (err,result) => {
            (err) ? console.log(err) : res.json(result.recordset)
            //res.json(result.recordset)
            //use keepTodaysDate after testing.

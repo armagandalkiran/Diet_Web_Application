@@ -1,0 +1,12 @@
+.totalguests-container{
+    margin: 0rem 3rem;
+    padding: 1rem;
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.totalguests-selection-items{
+    margin-top: 10px;
+}

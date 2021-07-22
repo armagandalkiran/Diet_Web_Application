@@ -10,6 +10,7 @@ import Menu from "./pages/Menu";
 import MakeMenu from "./pages/MakeMenu";
 import ShowMenu from "./pages/ShowMenu";
 import ShowTotalWeight from "./pages/ShowTotalWeight";
+import TotalGuests from "./pages/TotalGuests";
 
 var trueOrFalse = localStorage.getItem('rememberMe') ==='true';
 
@@ -33,6 +34,7 @@ function App() {
         <Route exact path="/MenuOlustur" component={MakeMenu}/>
         <Route exact path="/MenuGoruntule" component={ShowMenu}/>
         <Route exact path="/ToplamGramaj" component={ShowTotalWeight}/>
+        <Route exact path="/ToplamMisafir" component={TotalGuests}/>
       </Switch>
     </Router>
   )
