@@ -54,8 +54,11 @@ export function Login() {
         
         <div>
           <div className="login_screen">
-            <div className="login-screen-icon-container">
-              <i className='bx bx-pulse bx-tada'></i>
+            <div className="login-screen-brand-container">
+              <div className="login-screen-icon-container">
+                <i className='bx bx-pulse bx-tada'></i>
+              </div>
+              <p>DIETRY</p>
             </div>
             <form className="form_container">
               <input className="login_input"

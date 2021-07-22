@@ -121,22 +121,25 @@ function MakeMenu() {
                     })}
                 </ul>
             </div>
-            <div className="note_container">
-                {foods.map((food,index) => {
-                    if(food.name[0] === clickedItem) {
-                        if(!keepFoodNames.includes(food.name[2])){
-                            keepFoodNames.push(food.name[2]);
-                            return (<Product
-                                key = {index}
-                                id = {food.id[1]}
-                                title = {food.name[2]}
-                                onAdd = {addToCart}
-                                />
-                            )
+            <div className="food-choices-container">
+                <p>{clickedItem}</p>
+                <div className="note_container">    
+                    {foods.map((food,index) => {
+                        if(food.name[0] === clickedItem) {
+                            if(!keepFoodNames.includes(food.name[2])){
+                                keepFoodNames.push(food.name[2]);
+                                return (<Product
+                                    key = {index}
+                                    id = {food.id[1]}
+                                    title = {food.name[2]}
+                                    onAdd = {addToCart}
+                                    />
+                                )
+                            }
                         }
-                    }
-                    return null
-                })}
+                        return null
+                    })}
+                </div>
             </div>   
             <form>
                 <div className="receipt">
@@ -164,7 +167,7 @@ function MakeMenu() {
                     : 
                     <div>
                     <p>Henüz bir şey eklemediniz.</p>
-                    <i class='bx bx-basket'></i>
+                    <i className='bx bx-basket'></i>
                     </div>}
                 </div>   
             </form>

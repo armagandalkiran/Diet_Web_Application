@@ -7,6 +7,7 @@ function Home() {
 
     var date = new Date();
     const [guests,setGuests] = useState([]);
+    const [stores,setStores] = useState([]);
     var totalGuestNumber = 0;
     var buildingNo = 0;
 
@@ -20,6 +21,15 @@ function Home() {
         fetchData();
     },[]); 
 
+    async function fetchStoreData() {
+        const res = await fetch("/ingredients");
+        res
+          .json()
+          .then(res => setStores(res))
+    }
+    useEffect(() => {
+        fetchStoreData();
+    },[]); 
     
     return (
     <section>
@@ -50,16 +60,25 @@ function Home() {
             <div className="home-boxes">
                 <div className="notification-box">
                     <p className="building-description">Bildirimler<i className='bx bxs-bell'></i></p>
+                    <div className="notification-content">
+                        {stores.map((store,index)=>{
+                            if(store.stock < 5000){
+                                return (
+                                    <p key={store.ID}>{store.entry_date.substring(0,10)} giriş tarihli {store.name} isimli üründen {store.stock} adet kalmıştır.</p>
+                                )
+                            } return null
+                        })}
+                    </div>
                 </div>
                 <div>
-                    <div className="wide-info-boxes">
+                    <a href="MenuGoruntule" className="wide-info-boxes">
                         <p className="building-description">Günün menüsünü görüntüleyin !</p>
                         <i className='bx bxs-food-menu' ></i>
-                    </div>
-                    <div className="wide-info-boxes">
+                    </a>
+                    <a href="https://kalemzen.com.tr/iletisim" className="wide-info-boxes">
                         <p className="building-description">Müşteri hizmetleri ile görüşün !</p>
                         <i className='bx bx-question-mark'></i>
-                    </div>
+                    </a>
                 </div>    
             </div>    
         </div>

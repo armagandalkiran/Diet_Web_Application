@@ -123,6 +123,17 @@
   font-weight: bold;
 }
 
+.food-choices-container{
+  padding: 2% 0;
+}
+.food-choices-container p{
+  font-weight: bold;
+  text-align: left;
+  margin: 0 1rem;
+  font-size: 1.5rem;
+}
+
+
   
 
 

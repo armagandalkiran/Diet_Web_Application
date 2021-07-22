@@ -49,16 +49,13 @@
     margin:1rem;
     box-shadow: 0 2px 5px #ccc;
     border-radius: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
     padding: 1rem;   
 }
 
 .notification-box .building-description{
     color:rgba(39, 29, 85,0.6);
     font-size: 2.5rem;  
+    text-align: center;
 }
 
 .notification-box .bx{
@@ -87,6 +84,11 @@
 .notification-box .bx{
     font-size: 2.4rem;
     margin-left: 20px;
+}
+
+.notification-content{
+    height: 280px;
+    overflow: auto;
 }
 
 @media screen and (max-width: 768px){

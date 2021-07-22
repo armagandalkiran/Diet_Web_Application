@@ -1,10 +1,10 @@
 .ingredients_container {
-    padding: 2% 10%;
+    padding: 2% 11%;
     position: relative;
 }
 
 .ingredients_search_input {
-    float:right;
+    
 }
 
 .content-table {
@@ -50,10 +50,6 @@
     background-color: rgb(228, 227, 227);
 }
 
-.content-table tbody tr:last-of-type {
-    border-bottom: 2px solid #4723D9;
-}
-
 .content-table tbody tr td:last-of-type {
     padding:0;
 }
@@ -90,6 +86,29 @@
     display:flex;
     align-items: center;
     justify-content: space-evenly;
+}
+
+.ingredients-operations-container{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ingredients-stock-button{
+    width: 250px;
+    box-shadow: 0 2px 5px #ccc;
+    height: 35px;
+    font-size: 1.5rem;
+    border:2px solid;
+    border-color:#4723D9;
+    background-color:#fff;
+    border-radius:10px;
+    color:#4723D9;
+    cursor:pointer;
+}
+
+.ingredients-stock-button:hover{
+    box-shadow: 0 6px 20px #ccc;
 }
 
   

@@ -4,21 +4,22 @@ import Axios from "axios";
 function Register() {
 
     const [userInfo,setUserInfo] = useState({
-        name: "",
-        surname:"",
-        email: "",
-        password: "",
-        type: 0,
+      name: "",
+      surname:"",
+      email: "",
+      password: "",
+      type: 0//,
     });
 
     function handleChange(event) {
         const {name, value} = event.target;
 
         setUserInfo(prevValue => {
-            return {
+          return {
             ...prevValue,
             [name] : value
-            };
+          };
+        
         });
     }
 

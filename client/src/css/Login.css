@@ -11,7 +11,6 @@
     justify-content: center;
 }
 .login-screen-icon-container{
-    margin-bottom: 2rem;
     border: solid 7px;
     border-color:rgba(235, 205, 38,0.7);
     display:flex;
@@ -86,12 +85,28 @@ footer {
     background-color:rgba(39, 29, 85);
 
 }
+
+.login-screen-brand-container{
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.login-screen-brand-container p{
+    margin-top: 0.5rem;
+    color:rgba(235, 205, 38);
+    font-weight: bold;
+}
+
 .register_directory{
     display: block;
     text-align: right;
     text-decoration: none;
     color:white;
 }
+
 
 @keyframes fadein {
     from { opacity: 0; }
