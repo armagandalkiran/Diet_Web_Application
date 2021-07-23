@@ -1,5 +1,7 @@
 .note_container{
     width: 500px;
+    max-height: 450px;
+    overflow: auto;
     display:grid;
     grid-template-columns: auto auto;
 }

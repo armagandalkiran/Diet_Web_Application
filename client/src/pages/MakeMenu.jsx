@@ -46,16 +46,6 @@ function MakeMenu() {
     useEffect(() => {
         fetchData();
     },[]);  
-
-    // async function fetchCategoryNames() {
-    //     const res = await fetch("/categories");
-    //     res
-    //       .json()
-    //       .then(res => setCategories(res))
-    // }
-    // useEffect(() => {
-    //       fetchCategoryNames();
-    // },[]); 
       
     function handleCategoryClick(categoryItem){
         setClickedItem(categoryItem);
@@ -71,11 +61,7 @@ function MakeMenu() {
             if(food.name[2].includes(newItem)){
                 keepFoodIds.push(food.id[1]);
             }
-        })
-        // setKeepFoodIds(prevValue=>{
-        //     return [...prevValue,newItemId]
-        // });
-        
+        })    
     }
     
     function handleDayChange(event){
@@ -102,12 +88,6 @@ function MakeMenu() {
         setCardItems([]);
         setKeepFoodIds([]);
     }
-
-    // foods.forEach((food,index)=>{
-    //     foodNames.push(food.name[2]);
-    // });
-    // let filteredFoodNames = foodNames.filter((item,index) => foodNames.indexOf(item) === index);
-    // console.log(filteredFoodNames);
 
     return <div>
         <Navbar/>

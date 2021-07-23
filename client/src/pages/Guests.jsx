@@ -4,7 +4,7 @@ import Axios from "axios";
 import "../css/Guests.css"
 
 function Guests () {
-    const numberInterval = [1,2,3,4];
+    const numberInterval = ["Seçiniz",1,2,3,4];
     const staticDays = ["Sabah","Ogle","Ikindi Ara","Aksam","Gece Ara"];
     const [dayInterval,setDayInterval] = useState({
         day_time:"sabah",

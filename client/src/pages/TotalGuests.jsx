@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 
 function TotalGuests() {
 
-    const numberInterval = [1,2,3,4];
+    const numberInterval = ["Seçiniz",1,2,3,4];
     const [guests,setGuests] = useState([]);
     const [monthYear,setMonthYear] = useState("");
     const [buildingNo,setBuildingNo] = useState(0);

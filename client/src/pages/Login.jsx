@@ -12,14 +12,12 @@ export function Login() {
         password:"",
     });
 
-    // Handle route changes after login
     const history = useHistory();
 
     const routeChange = (path) =>{ 
         history.push(path);
     }
 
-    // Handle form inputs  
     function handleChange(event) {
         const {name, value} = event.target;
 
@@ -31,16 +29,15 @@ export function Login() {
         });
     }
 
-    // Handle send backend the form inputs
     const login = (e) => {
-
-        e.preventDefault();
-        Axios.post("/",userInfo).then(response=>{
-            // console.log(response);
-            isAuthenticated = response.data;
-            localStorage.setItem('rememberMe',isAuthenticated);
-            checkAuthentication();
-        });
+      
+      e.preventDefault();
+      Axios.post("/",userInfo).then(response=>{
+          // console.log(response);
+          isAuthenticated = response.data;
+          localStorage.setItem('rememberMe',isAuthenticated);
+          checkAuthentication();
+      });
     }
 
     function checkAuthentication () {
